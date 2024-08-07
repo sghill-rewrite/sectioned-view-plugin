@@ -3,7 +3,7 @@
     <parent>
     <groupId>org.jenkins-ci.plugins</groupId>
     <artifactId>plugin</artifactId>
-    <version>2.23</version>
+    <version>4.86</version>
   </parent>
 
   <artifactId>sectioned-view</artifactId>
@@ -33,6 +33,17 @@
     <url>https://github.com/jenkinsci/${project.artifactId}-plugin</url>
     <tag>HEAD</tag>
   </scm>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>io.jenkins.tools.bom</groupId>
+        <artifactId>bom-2.440.x</artifactId>
+        <version>3234.v5ca_5154341ef</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
   <repositories>
     <repository>
@@ -48,7 +59,7 @@
   </pluginRepositories>
 
   <properties>
-    <jenkins.version>1.580.3</jenkins.version>
+    <jenkins.version>2.440.3</jenkins.version>
     <java.version>6</java.version>
     <findbugs.failOnError>false</findbugs.failOnError>
   </properties>
@@ -69,20 +80,17 @@
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>junit</artifactId>
-      <version>1.19</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>antisamy-markup-formatter</artifactId>
-      <version>1.2</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <optional>true</optional>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>cloudbees-folder</artifactId>
-      <version>5.18</version>
     </dependency>
 
   </dependencies>
